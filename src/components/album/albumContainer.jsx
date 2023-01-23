@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Pagination from "../common/pagination";
 import Paginate from "../common/paginate";
 import ShimmerCard from "../common/cardShimmer";
-
 import { useFetchAlbum, useFetchUser, useFetchAllAlbum } from "./request";
 import AlbumCard from "./component/albumCard";
 import ErrorHandling from "../common/ErrorHandling";
