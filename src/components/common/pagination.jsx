@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const Pagination = ({ handlePagination, page }) => {
   const [toggle, setToggle] = useState(false);
-  const pageList = [20, 30, 40];
+  const pageList = [20, 30, 50];
 
   const handleClick = (val) => {
     handlePagination(val);
@@ -45,7 +45,6 @@ const Pagination = ({ handlePagination, page }) => {
           aria-labelledby="menu-button"
           tabIndex="-1"
         >
-          {/* <div className="py-1 w-15" role="none"> */}
           {pageList.map((val) => (
             <div key={val} className="py-1 w-15" role="none">
               <span

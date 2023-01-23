@@ -1,4 +1,4 @@
-# Album List
+# Photo List
 
 Grid view of all the photos 
 

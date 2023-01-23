@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import ShimmerCard from "../common/cardShimmer";
-import { useFetchAlbumPhotos, useFetchAllAlbumPhotos } from "./request";
-import PhotoCard from "./components/photoCard";
-import Pagination from "../common/pagination";
-import Paginate from "../common/paginate";
 
-import ErrorHandling from "../common/ErrorHandling";
+//request
+import { useFetchAlbumPhotos, useFetchAllAlbumPhotos } from "./request";
+
+// components
+import PhotoCard from "./components/photoCard";
+import { Pagination, Paginate, ShimmerCard, ErrorHandling } from "../common";
 
 const PhotoContainer = () => {
   const { id, authorName, albumName } = useParams();
@@ -22,6 +22,7 @@ const PhotoContainer = () => {
   const { data: allPhotos } = useFetchAllAlbumPhotos(id);
 
   const handlePagination = (val) => {
+    setCurrentPage(1)
     setPage(val);
   };
 

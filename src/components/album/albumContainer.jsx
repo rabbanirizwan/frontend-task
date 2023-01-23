@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import Pagination from "../common/pagination";
-import Paginate from "../common/paginate";
-import ShimmerCard from "../common/cardShimmer";
+
+// request
 import { useFetchAlbum, useFetchUser, useFetchAllAlbum } from "./request";
+
+// components
 import AlbumCard from "./component/albumCard";
-import ErrorHandling from "../common/ErrorHandling";
+import { Pagination, Paginate, ShimmerCard, ErrorHandling } from "../common";
 
 const AlbumContainer = () => {
   const [page, setPage] = useState(20);
@@ -25,6 +26,7 @@ const AlbumContainer = () => {
 
   const handlePagination = (val) => {
     setPage(val);
+    setCurrentPage(1)
   };
 
   const handlePageChange = (newPage) => {
@@ -42,7 +44,9 @@ const AlbumContainer = () => {
             <Pagination handlePagination={handlePagination} page={page} />
 
             <p className="text-sm text-gray-700">
-              <span className="font-medium px-1">{allAlbums?.length} results</span>
+              <span className="font-medium px-1">
+                {allAlbums?.length} results
+              </span>
             </p>
             <Paginate
               data={allAlbums}
