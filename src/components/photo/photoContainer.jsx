@@ -6,7 +6,7 @@ import { useFetchAlbumPhotos, useFetchAllAlbumPhotos } from "./request";
 
 // components
 import PhotoCard from "./components/photoCard";
-import { Pagination, Paginate, ShimmerCard, ErrorHandling } from "../common";
+import { TotalPage, Pagination, ShimmerCard, ErrorHandling } from "../common";
 
 const PhotoContainer = () => {
   const { id, authorName, albumName } = useParams();
@@ -44,13 +44,13 @@ const PhotoContainer = () => {
           />
 
           <div className="flex flex-row-reverse justify-between mt-8 items-center">
-            <Pagination handlePagination={handlePagination} page={page} />
+            <TotalPage handlePagination={handlePagination} page={page} />
             <p className="text-sm text-gray-700">
               <span className="font-medium px-1">
                 {allPhotos?.length} results
               </span>
             </p>
-            <Paginate
+            <Pagination
               data={allPhotos}
               itemsPerPage={page}
               handlePageChange={handlePageChange}

@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Paginate from "../components/common/paginate";
+import Pagination from "../components/common/pagination";
 import { mockAlbums } from "./mockData";
 
 const obj = {
@@ -11,7 +11,7 @@ const obj = {
 
 describe("paginate", () => {
   test("should display 5 pagination box", () => {
-    render(<Paginate {...obj} />);
+    render(<Pagination {...obj} />);
     expect(screen.getByTestId(1)).toBeInTheDocument();
     expect(screen.getByTestId(2)).toBeInTheDocument();
     expect(screen.getByTestId(3)).toBeInTheDocument();
@@ -20,15 +20,15 @@ describe("paginate", () => {
     expect(screen.queryByTestId(6)).not.toBeInTheDocument();
   });
   test("button one should have blue background color initially", async () => {
-    render(<Paginate {...obj} />);
+    render(<Pagination {...obj} />);
     expect(await screen.findByTestId(1)).toHaveClass("bg-blue-500");
   });
   test("button two should have gray background color before click", async () => {
-    render(<Paginate {...obj} />);
+    render(<Pagination {...obj} />);
     expect(await screen.findByTestId(2)).toHaveClass("bg-gray-300");
   });
   test("should call handlePageChange on click", async () => {
-    render(<Paginate {...obj} />);
+    render(<Pagination {...obj} />);
     const button = screen.getByTestId(2);
 
     fireEvent.click(button);

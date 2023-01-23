@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Pagination from "../components/common/pagination";
+import TotalPage from "../components/common/totalPage";
 
 const obj = {
   handlePagination: jest.fn(),
@@ -8,11 +8,11 @@ const obj = {
 
 describe("Pagination",()=>{
     test("should have 20 initially",()=>{
-        render(<Pagination {...obj}/>);
+        render(<TotalPage {...obj}/>);
         expect(screen.getByText(20)).toBeInTheDocument();
     });
     test("click on 30 should call handlePagination and change items in page to 30",()=>{
-        render(<Pagination {...obj}/>);
+        render(<TotalPage {...obj}/>);
         const button  =  screen.getByTestId('menu-button');
         expect(button).toBeInTheDocument();
         fireEvent.click(button);

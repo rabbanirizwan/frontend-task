@@ -1,4 +1,3 @@
-import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import ErrorPage from "./components/error/ErrorPage";

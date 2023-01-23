@@ -5,7 +5,7 @@ import { useFetchAlbum, useFetchUser, useFetchAllAlbum } from "./request";
 
 // components
 import AlbumCard from "./component/albumCard";
-import { Pagination, Paginate, ShimmerCard, ErrorHandling } from "../common";
+import { TotalPage, Pagination, ShimmerCard, ErrorHandling } from "../common";
 
 const AlbumContainer = () => {
   const [page, setPage] = useState(20);
@@ -41,14 +41,14 @@ const AlbumContainer = () => {
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <AlbumCard albums={albums} users={users} />
           <div className="flex flex-row-reverse justify-between mt-8 items-center	">
-            <Pagination handlePagination={handlePagination} page={page} />
+            <TotalPage handlePagination={handlePagination} page={page} />
 
             <p className="text-sm text-gray-700">
               <span className="font-medium px-1">
                 {allAlbums?.length} results
               </span>
             </p>
-            <Paginate
+            <Pagination
               data={allAlbums}
               itemsPerPage={page}
               handlePageChange={handlePageChange}
