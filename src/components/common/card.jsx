@@ -14,6 +14,7 @@ const Card = (props) => {
           src={imageUrl}
           alt="cardimage"
           className="rounded-t h-72 w-full object-cover"
+          loading="lazy"
         />
 
         <figcaption className="p-4">

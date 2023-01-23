@@ -1,7 +1,7 @@
-import Card from "../../common/card";
 import { useState } from "react";
 import PhotoDetailModal from "./photoDetailModal";
-import TitleContainer from "../../common/titleContainer";
+import { Card, TitleContainer } from "../../common";
+
 const PhotoCard = ({ cardInfo, albumName, authorName }) => {
   const [currentPhoto, setCurrentPhoto] = useState(null);
 
@@ -29,7 +29,7 @@ const PhotoCard = ({ cardInfo, albumName, authorName }) => {
           );
         })}
       </div>
-      
+
       {currentPhoto && (
         <PhotoDetailModal
           photo={currentPhoto}

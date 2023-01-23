@@ -1,4 +1,5 @@
-import Card from "../../common/card";
+import React from "react";
+import { Card } from "../../common";
 import { Link } from "react-router-dom";
 
 const AlbumCard = ({ albums, users }) => {

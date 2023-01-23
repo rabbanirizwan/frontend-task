@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 // request
 import { useFetchAlbum, useFetchUser, useFetchAllAlbum } from "./request";
@@ -6,6 +6,7 @@ import { useFetchAlbum, useFetchUser, useFetchAllAlbum } from "./request";
 // components
 import AlbumCard from "./component/albumCard";
 import { TotalPage, Pagination, ShimmerCard, ErrorHandling } from "../common";
+
 
 const AlbumContainer = () => {
   const [page, setPage] = useState(20);
@@ -26,7 +27,7 @@ const AlbumContainer = () => {
 
   const handlePagination = (val) => {
     setPage(val);
-    setCurrentPage(1)
+    setCurrentPage(1);
   };
 
   const handlePageChange = (newPage) => {
@@ -37,9 +38,10 @@ const AlbumContainer = () => {
     <>
       {(isAlbumLoading || isUserLoading) && <ShimmerCard />}
       {(isAlbumError || isUerError) && <ErrorHandling />}
-      {(isAlbumSuccess && isUserSuccess) && (
+      {isAlbumSuccess && isUserSuccess && (
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <AlbumCard albums={albums} users={users} />
+
           <div className="flex flex-row-reverse justify-between mt-8 items-center	">
             <TotalPage handlePagination={handlePagination} page={page} />
 
